@@ -1,36 +1,171 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Football Insight Assistant
 
-## Getting Started
+A conversational AI-powered football analytics application that democratizes professional-level football analytics through natural language interactions.
 
-First, run the development server:
+## 🎯 Features
 
-```bash
+### Core Capabilities
+- **16 Demo Queries** across 7 categories:
+  - Shot mapvisualization with gradient pitch design
+  - Player comparisons (any two players)
+  - Team tactical analysis (20+ teams)
+  - Player rankings (any position)
+  - Statistical queries (top scorers, assists)
+  - Match predictions
+  - Form tracking
+
+### Visualizations
+- 🎯 Shot maps with goal/miss indicators
+- 🏈 Gradient-based team cards with stats
+- 📊 Professional pitch rendering with player locations
+
+### Smart Features
+- 🤖 Natural language processing for queries
+- 🔄 Auto-scroll and loading states
+- 🎨 Polished UI with gradients, animations, cards
+- 💬 Real-time chat interface with conversational responses
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm/yarn/pnpm
+
+### Installation
+\`\`\`bash
+# Clone the repository
+git clone https://github.com/adamacu/football-insight-assistant.git
+cd football-insight-assistant
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the App
+Open http://localhost:3000 to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Demo Page
+Visit http://localhost:3000/demo for the interactive chat interface.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📊 Demo Queries
 
-## Learn More
+Try these in the chat:
+- "Show me shot map for Liverpool vs Chelsea"
+- "Compare Salah vs Haaland"
+- "Analyze Arsenal tactics"
+- "Who is the best striker"
+- "Compare Mbappe vs Vinicius"
+- "Analyze Real Madrid"
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: Next.js 14 (App Router) + TypeScript
+- **Styling**: Tailwind CSS
+- **Visualizations**: D3.js, Recharts
+- **Icons**: Lucide React
+- **State**: React hooks (useState, useEffect, useRef)
+- **Animations**: CSS keyframes + transitions
+- **Data Source**: StatsBomb Open Data (sample data)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 UI/UX Highlights
 
-## Deploy on Vercel
+- Gradient backgrounds throughout
+- Smooth CSS animations (pulse, fade, slide-in)
+- Custom scrollbar styling
+- Hover effects and transitions
+- Backdrop blur effects
+- Card-based modern design
+- Responsive layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+\`\`\`bash
+football-insight-assistant/
+├── app/
+│   ├── demo/page.tsx          # Interactive demo page
+│   ├── layout.tsx             # Root layout with metadata
+│   ├── page.tsx              # Landing page
+│   └── globals.css           # Custom styles and animations
+├── components/
+│   ├── Chat.tsx              # Chat interface
+│   ├── Message.tsx           # Message bubbles
+│   └── ShotMap.tsx           # Shot visualization
+├── lib/
+│   └── sampleData.ts         # Static football data
+└── public/                   # Static assets
+\`\`\`
+
+## 🎓 Architecture
+
+### Query Processing
+1. User types natural language query
+2. Pattern matching detects query type
+3. Smart functions extract entities (players, teams, positions)
+4. Dynamic response generation with contextual stats
+
+### Data Flow
+\`\`\`
+User Input → Query Processor → Response Generator → Visualization Renderer → UI Display
+\`\`\`
+
+## 🔧 Development
+
+### Adding New Demo Queries
+1. Key phrases to match in `Chat.tsx`
+2. Response content with stats
+3. Optional visualization component
+
+### Adding New Visualizations
+1. Create component in `/components`
+2. Update responses in `Chat.tsx`
+3. Integrate with query matching logic
+
+## 📋 Hackathon Submissions
+
+This project was built as a hackathon MVP demonstrating:
+- **Novelty**: Conversational AI for sports analytics
+- **Utility**: Saves coaches, analysts, fans time getting insights
+- **Visual Polish**: Professional-grade UI with gradients, animations
+- **Breadth**: 16 query types, 7 categories of analysis
+
+## 🎯 Demo Script
+
+\`\`\`
+1. Landing page - Gradient hero with pulsing badge
+2. Demo page - Show "Show me shot map for Liverpool vs Chelsea"
+3. Shot map - Visual pitch with glowing goals
+4. Second query - "Compare Mbappe vs Vinicius"
+5. Third query - "Who is the best winger"
+6. Explain: "Built with Next.js, StatsBomb data, and LLM-powered natural language"
+\`\`\`
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+\`\`\`bash
+npm run build
+# Deploy to Vercel from GitHub
+\`\`\`
+
+### Local Production
+\`\`\`bash
+npm run build
+npm run start
+\`\`\`
+
+## 📄 License
+
+MIT License - feel free to use and modify.
+
+## 🙏 Credits
+
+- **Data**: StatsBomb Open Data
+- **Tech**: Next.js, Tailwind CSS, D3.js
+- **Icons**: Lucide React
+
+## 📧 Contact
+
+For questions or issues: [GitHub Issues](https://github.com/adamacu/football-insight-assistant/issues)
